@@ -1,0 +1,14 @@
+{
+  "name": "achilles",
+  "version": "1.0.0",
+  "description": "A node js logging library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "achilles"
+  ],
+  "author": "Arneesh Aima",
+  "license": "ISC"
+}
