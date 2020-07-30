@@ -18,7 +18,7 @@ export class DataValidator    {
    }
 
 
-   validateInput(): string {
+   validateInput(): string | boolean {
        let data = this.data;
        let benchmark = this.benchmark;
 
@@ -43,7 +43,7 @@ export class DataValidator    {
     this.dataValidatorObject.errorType = `Equality Passed`;
     this.dataValidatorObject.errorMessage = `Provided data and benchmark were exact match.`;
 
-    return JSON.stringify(this.dataValidatorObject);
+    return true;
    }
 
 
