@@ -18,7 +18,7 @@ export class DataValidator    {
    }
 
 
-   validateInput(): string | boolean {
+    validateInput(): string | boolean {
        let data = this.data;
        let benchmark = this.benchmark;
 
@@ -46,8 +46,21 @@ export class DataValidator    {
     return true;
    }
 
+   static compareObjectKeys(object1: object, object2: object): boolean | string {
 
+    if(object1 === null || object2 === null) {
+        return `Expected ${object1 || object2} to be an 'object'  but recieved 'null'`;
+    } else if (object1 === undefined || object2 === undefined){
+        return `Expected ${object1 || object2} to be an 'object'  but recieved 'undefined'`;
+        
+    } else if(typeof(object1) != 'object' || typeof(object2) != 'object') {
+        return `Invalid Data Type. Expected ${object1 || object2} to be an 'object'`;
+    }
 
+    let object1Keys = Object.keys(object1).sort();
+    let object2Keys = Object.keys(object2).sort();
+    return JSON.stringify(object1Keys) === JSON.stringify(object2Keys);
+   }
 
 
 };
